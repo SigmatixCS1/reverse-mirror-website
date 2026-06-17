@@ -1,65 +1,99 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <div className="relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(188,48,58,0.2),transparent_30%),radial-gradient(circle_at_80%_12%,rgba(215,168,98,0.12),transparent_24%),radial-gradient(circle_at_50%_90%,rgba(120,18,28,0.15),transparent_38%)]"
+      />
+      <section className="relative mx-auto grid w-full max-w-7xl gap-12 px-5 py-20 md:grid-cols-[1.2fr_0.8fr] md:gap-16 md:px-8 md:py-28">
+        <div className="space-y-8">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs tracking-[0.14em] uppercase text-zinc-300">
+            <span
+              aria-hidden="true"
+              className="inline-block h-2 w-2 rounded-full bg-[#9a1d27]"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Psychological Horror Anthology
+          </p>
+          <header className="space-y-5">
+            <h1 className="text-5xl leading-[1.06] font-semibold tracking-tight text-zinc-50 sm:text-6xl md:text-7xl">
+              Reverse Mirror
+            </h1>
+            <p className="max-w-3xl text-lg leading-relaxed text-zinc-200 md:text-xl">
+              Humanity unconsciously creates the systems that consume it.
+            </p>
+          </header>
+          <p className="max-w-3xl text-base leading-relaxed text-zinc-300 md:text-lg">
+            Reverse Mirror is an interconnected psychological and archetypal
+            horror anthology about projection, artificial intimacy, media
+            possession, shadow integration, and the struggle to remain conscious
+            inside systems built from human wounds.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/stories"
+              className="rounded-md border border-[#ba3540] bg-[#8f1d26] px-5 py-2.5 text-sm font-medium text-zinc-100 transition-colors hover:bg-[#a02531] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d7a862]"
+            >
+              Enter the Stories
+            </Link>
+            <Link
+              href="/about"
+              className="rounded-md border border-white/20 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:border-[#d7a862]/60 hover:text-[#f0d4ac] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d7a862]"
+            >
+              Explore the World
+            </Link>
+          </div>
         </div>
-      </main>
+        <aside
+          aria-label="Visual motif panel"
+          className="relative min-h-[320px] rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(35,35,35,0.35),rgba(8,8,8,0.9))] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_70px_rgba(0,0,0,0.55)]"
+        >
+          <div className="absolute inset-5 rounded-xl border border-[#7f1820]/40" />
+          <div className="absolute top-9 right-9 h-20 w-20 rotate-12 rounded-sm border border-[#d7a862]/35 bg-black/20" />
+          <div className="absolute bottom-9 left-9 h-24 w-24 -rotate-6 rounded-sm border border-white/12 bg-black/20" />
+          <div className="relative z-10 mt-auto flex h-full flex-col justify-end gap-2">
+            <p className="text-xs tracking-[0.14em] uppercase text-[#d7a862]">
+              Phase One
+            </p>
+            <p className="text-sm leading-relaxed text-zinc-300">
+              Fractured mirrors, muted firelight, and human silhouettes at the
+              edge of becoming myth.
+            </p>
+          </div>
+        </aside>
+      </section>
+      <section className="relative border-t border-white/10 bg-black/35">
+        <div className="mx-auto grid w-full max-w-7xl gap-8 px-5 py-12 md:grid-cols-3 md:px-8">
+          <article className="space-y-2">
+            <h2 className="text-base font-semibold text-zinc-100">
+              Archetypal Conflict
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-400">
+              Characters embody fractures between persona and shadow, power and
+              conscience.
+            </p>
+          </article>
+          <article className="space-y-2">
+            <h2 className="text-base font-semibold text-zinc-100">
+              Media Possession
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-400">
+              Stories track how intimacy and identity are rewritten by systems
+              built to consume attention.
+            </p>
+          </article>
+          <article className="space-y-2">
+            <h2 className="text-base font-semibold text-zinc-100">
+              Shadow Integration
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-400">
+              Horror emerges not from monsters alone, but from refusal to face
+              what we create.
+            </p>
+          </article>
+        </div>
+      </section>
     </div>
   );
 }
