@@ -1,0 +1,29 @@
+#!/bin/sh
+set -eu
+
+resolve_gitleaks_bin() {
+  if command -v gitleaks >/dev/null 2>&1; then
+    command -v gitleaks
+    return 0
+  fi
+
+  if [ -n "${LOCALAPPDATA:-}" ]; then
+    localappdata_unix_path=$(printf '%s' "$LOCALAPPDATA" | tr '\\' '/')
+    winget_candidate="$localappdata_unix_path/Microsoft/WinGet/Packages/Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe/gitleaks.exe"
+    if [ -x "$winget_candidate" ]; then
+      printf '%s\n' "$winget_candidate"
+      return 0
+    fi
+  fi
+
+  return 1
+}
+
+if ! GITLEAKS_BIN="$(resolve_gitleaks_bin)"; then
+  echo "ERROR: gitleaks is required to commit, but was not found." >&2
+  echo "Install it with: winget install --id Gitleaks.Gitleaks -e" >&2
+  exit 1
+fi
+
+echo "Running gitleaks secret scan on staged changes..."
+"$GITLEAKS_BIN" git --staged --redact --no-banner --exit-code 1

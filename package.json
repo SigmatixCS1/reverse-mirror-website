@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "setup:githooks": "git config core.hooksPath .githooks",
+    "secrets:scan": "gitleaks git --redact --no-banner",
+    "secrets:scan:staged": "gitleaks git --staged --redact --no-banner"
   },
   "dependencies": {
     "firebase": "^12.15.0",
