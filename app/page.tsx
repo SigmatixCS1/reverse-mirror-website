@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroCarousel from "./components/hero-carousel";
 
 export default function Home() {
   return (
@@ -52,15 +53,7 @@ export default function Home() {
           <div className="absolute inset-5 rounded-xl border border-[#7f1820]/40" />
           <div className="absolute top-9 right-9 h-20 w-20 rotate-12 rounded-sm border border-[#d7a862]/35 bg-black/20" />
           <div className="absolute bottom-9 left-9 h-24 w-24 -rotate-6 rounded-sm border border-white/12 bg-black/20" />
-          <div className="relative z-10 mt-auto flex h-full flex-col justify-end gap-2">
-            <p className="text-xs tracking-[0.14em] uppercase text-[#d7a862]">
-              Phase One
-            </p>
-            <p className="text-sm leading-relaxed text-zinc-300">
-              Fractured mirrors, muted firelight, and human silhouettes at the
-              edge of becoming myth.
-            </p>
-          </div>
+          <HeroCarousel />
         </aside>
       </section>
       <section className="relative border-t border-white/10 bg-black/35">
