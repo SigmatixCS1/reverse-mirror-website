@@ -1,4 +1,5 @@
 import Link from "next/link";
+import OccultFrame from "./components/OccultFrame";
 import HeroCarousel from "./components/hero-carousel";
 
 export default function Home() {
@@ -53,7 +54,9 @@ export default function Home() {
           <div className="absolute inset-5 rounded-xl border border-[#7f1820]/40" />
           <div className="absolute top-9 right-9 h-20 w-20 rotate-12 rounded-sm border border-[#d7a862]/35 bg-black/20" />
           <div className="absolute bottom-9 left-9 h-24 w-24 -rotate-6 rounded-sm border border-white/12 bg-black/20" />
-          <HeroCarousel />
+          <OccultFrame className="relative z-10 h-full">
+            <HeroCarousel />
+          </OccultFrame>
         </aside>
       </section>
       <section className="relative border-t border-white/10 bg-black/35">
