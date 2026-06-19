@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import OccultFrame from "../components/OccultFrame";
-import LightboxImage from "../components/lightbox-image";
+import SystemImage from "../components/system-image";
 
 export const metadata: Metadata = {
   title: "Systems",
@@ -110,17 +110,17 @@ function StreamPanel({ entry }: { entry: StreamHost }) {
       <div className="grid gap-0 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="p-4 md:p-5">
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#7f1820]/40 bg-black/50 ring-1 ring-inset ring-[#d7a862]/10">
-            <LightboxImage
+            <SystemImage
               src={entry.image}
               alt={entry.alt}
               host={entry.host}
               show={entry.show}
-              category={entry.category}
               sizes="(max-width: 768px) 92vw, 42vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.2)_45%,rgba(0,0,0,0.04)_100%)]"
+              className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.2)_45%,rgba(0,0,0,0.04)_100%)]"
             />
           </div>
         </div>
@@ -191,17 +191,17 @@ export default function SystemsPage() {
         <div className="mt-12 md:mt-16">
           <OccultFrame>
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[0.95rem] md:aspect-[21/9]">
-              <LightboxImage
+              <SystemImage
                 src="/images/systems/videre/videre-platform.png"
                 alt="The Videre platform"
                 show="Videre"
-                category="Platform System"
                 priority
                 sizes="(max-width: 768px) 92vw, 1152px"
+                className="object-cover"
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.12)_55%,rgba(0,0,0,0)_100%)] shadow-[inset_0_0_70px_rgba(0,0,0,0.6)]"
+                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.12)_55%,rgba(0,0,0,0)_100%)] shadow-[inset_0_0_70px_rgba(0,0,0,0.6)]"
               />
             </div>
           </OccultFrame>

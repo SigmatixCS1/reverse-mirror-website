@@ -35,12 +35,10 @@ All pages live under `app/` (App Router). Top navigation is defined by the `navL
 ## Key Components
 Shared components live in `app/components/`:
 - `OccultFrame.tsx` — decorative red/black gradient frame with glow and corner sigils, used around feature imagery.
-- `image-lightbox.tsx` (`ImageLightbox`) — reusable, accessible full‑screen lightbox modal (`role="dialog"`, `aria-modal`, Escape + click‑outside to close, body scroll lock, focus restore, optional host/show/category caption).
-- `lightbox-image.tsx` (`LightboxImage`) — clickable `next/image` thumbnail that fills its positioned parent, adds hover scale/brightness + red glow, opens the `ImageLightbox`, and falls back to a dark placeholder (host/show) if an image is missing.
-- `system-image.tsx` (`SystemImage`) — `next/image` wrapper with the same missing‑image fallback (non‑interactive variant).
+- `system-image.tsx` (`SystemImage`) — `next/image` wrapper that falls back to a dark placeholder (host/show) if an image is missing.
 - `hero-carousel.tsx` — client carousel used on the home page.
 ## Characters page
-`app/characters/page.tsx` renders three sections from typed `Character[]` arrays — `characters` (Core Cast), `expandedCharacters` (Expanded Cast), and `systemArchitects` (System Architects). A shared `CharacterCard` renders both a `feature` (large, side‑by‑side) and a `compact` (tighter grid) variant. Portraits use `LightboxImage`, so clicking any portrait opens the enlarged view with the character name + role as the caption.
+`app/characters/page.tsx` renders three sections from typed `Character[]` arrays — `characters` (Core Cast), `expandedCharacters` (Expanded Cast), and `systemArchitects` (System Architects). A shared `CharacterCard` renders both a `feature` (large, side‑by‑side) and a `compact` (tighter grid) variant. Portraits use `next/image`.
 ### Adding a character
 1. Drop the portrait in `public/images/characters/` (e.g. `new-character.png`).
 2. Append an entry to the relevant array in `app/characters/page.tsx`:
@@ -58,25 +56,10 @@ Shared components live in `app/components/`:
 ### Adding a character section
 Copy an existing section block (divider + header + grid) at the bottom of the page, define a new array, and map it through `CharacterCard` with `variant="feature"` or `variant="compact"`.
 ## Systems page
-`app/systems/page.tsx` presents the **Videre** platform: a hero intro, a cinematic banner wrapped in `OccultFrame`, and a `streamNetwork` of host "dossier" panels (image left / text right on desktop, stacked on mobile). Banner and host thumbnails use `LightboxImage`. Images live in `public/images/systems/videre/`.
+`app/systems/page.tsx` presents the **Videre** platform: a hero intro, a cinematic banner wrapped in `OccultFrame`, and a `streamNetwork` of host "dossier" panels (image left / text right on desktop, stacked on mobile). Banner and host thumbnails use `next/image` via the `SystemImage` wrapper. Images live in `public/images/systems/videre/`.
 ### Adding a platform or host
 - Add host art under `public/images/systems/<platform>/` and append entries to the host data array.
-- For a new platform (e.g. Votive Live, Velvet Room, Kindred+, Helix), copy the banner + stream‑network sections, point them at a new `public/images/systems/<slug>/` folder, and update the headings/copy. `LightboxImage` and `OccultFrame` are reused as‑is.
-## Image lightbox
-Any image can be made click‑to‑enlarge by rendering `LightboxImage` inside a positioned container that defines the aspect ratio:
-```tsx
-<div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl">
-  <LightboxImage
-    src="/images/characters/kaiden-mateo.png"
-    alt="Portrait of Kaiden Mateo"
-    host="Kaiden Mateo"
-    show="Conscious Chaos Bearer"
-    sizes="(max-width: 768px) 90vw, 30vw"
-  />
-  {/* any decorative overlay must be pointer-events-none */}
-</div>
-```
-Notes: the parent must be positioned (`relative`) and size the box; decorative overlays over it need `pointer-events-none` so clicks reach the thumbnail. Use `ImageLightbox` directly if you need a controlled modal with your own state.
+- For a new platform (e.g. Votive Live, Velvet Room, Kindred+, Helix), copy the banner + stream‑network sections, point them at a new `public/images/systems/<slug>/` folder, and update the headings/copy. `OccultFrame` is reused as‑is.
 ## Deployment
 The site is deployed to Vercel. Production deploys are done from the project root:
 ```bash
