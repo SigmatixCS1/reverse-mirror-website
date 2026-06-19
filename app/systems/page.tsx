@@ -109,14 +109,14 @@ function StreamPanel({ entry }: { entry: StreamHost }) {
     <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(150deg,rgba(35,35,35,0.32),rgba(8,8,8,0.92))] shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_18px_60px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-[#ba3540]/45 hover:shadow-[0_0_0_1px_rgba(186,53,64,0.28),0_26px_70px_rgba(0,0,0,0.6)] focus-within:-translate-y-1 focus-within:border-[#ba3540]/45">
       <div className="grid gap-0 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="p-4 md:p-5">
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#7f1820]/40 bg-black/50 ring-1 ring-inset ring-[#d7a862]/10">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#7f1820]/40 bg-black/60 ring-1 ring-inset ring-[#d7a862]/10">
             <SystemImage
               src={entry.image}
               alt={entry.alt}
               host={entry.host}
               show={entry.show}
               sizes="(max-width: 768px) 92vw, 42vw"
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
             />
             <div
               aria-hidden="true"
@@ -190,14 +190,14 @@ export default function SystemsPage() {
 
         <div className="mt-12 md:mt-16">
           <OccultFrame>
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[0.95rem] md:aspect-[21/9]">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[0.95rem] bg-black/60 md:aspect-[21/9]">
               <SystemImage
                 src="/images/systems/videre/videre-platform.png"
                 alt="The Videre platform"
                 show="Videre"
                 priority
                 sizes="(max-width: 768px) 92vw, 1152px"
-                className="object-cover"
+                className="object-contain"
               />
               <div
                 aria-hidden="true"
