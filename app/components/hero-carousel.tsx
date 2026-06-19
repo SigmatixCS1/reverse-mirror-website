@@ -82,7 +82,7 @@ export default function HeroCarousel() {
 
   return (
     <div
-      className="relative z-10 h-full min-h-[320px] overflow-hidden rounded-[0.95rem] bg-black/40 sm:min-h-[360px] md:min-h-[420px]"
+      className="relative z-10 h-[320px] w-full overflow-hidden rounded-[0.95rem] bg-black/40 sm:h-[360px] md:h-[420px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-label="Featured visual narratives"
