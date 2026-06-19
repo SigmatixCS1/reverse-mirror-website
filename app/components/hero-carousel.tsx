@@ -9,6 +9,7 @@ type HeroSlide = {
   title: string;
   caption: string;
   link?: string;
+  imagePosition?: string;
 };
 
 const slides: HeroSlide[] = [
@@ -30,6 +31,7 @@ const slides: HeroSlide[] = [
     title: "AI and the Loss of Self",
     caption: "Being answered is not the same as being met.",
     link: "/stories",
+    imagePosition: "center 70%",
   },
 ];
 
@@ -101,6 +103,7 @@ export default function HeroCarousel() {
               priority={index === 0}
               sizes="(max-width: 768px) 100vw, 35vw"
               className="object-cover"
+              style={{ objectPosition: slide.imagePosition ?? "center" }}
             />
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.36)_48%,rgba(0,0,0,0.12)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
