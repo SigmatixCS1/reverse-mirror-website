@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import LightboxImage from "../components/lightbox-image";
 import OccultFrame from "../components/OccultFrame";
 
 export const metadata: Metadata = {
@@ -192,20 +192,20 @@ function CharacterCard({
             <div
               className={`relative ${compact ? "aspect-[4/5]" : "aspect-[3/4]"} w-full overflow-hidden rounded-[0.95rem]`}
             >
-              <Image
+              <LightboxImage
                 src={character.image}
                 alt={character.alt}
-                fill
+                host={character.name}
+                show={character.role}
                 sizes={
                   compact
                     ? "(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
                     : "(max-width: 768px) 90vw, (max-width: 1280px) 40vw, 30vw"
                 }
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.05)_100%)]"
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0.05)_100%)]"
               />
             </div>
           </OccultFrame>
