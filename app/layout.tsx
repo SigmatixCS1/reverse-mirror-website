@@ -27,7 +27,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/stories", label: "Stories" },
   { href: "/characters", label: "Characters" },
-  { href: "/mythology", label: "Mythology" },
+  { href: "/mirror", label: "Mirror" },
   { href: "/systems", label: "Systems" },
   { href: "/gallery", label: "Gallery" },
 ];
