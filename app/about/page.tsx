@@ -72,10 +72,10 @@ const guides: Guide[] = [
       "Meet the people carrying the wounds, gifts, shadows, and choices that shape the anthology.",
   },
   {
-    href: "/mythology",
-    title: "Mythology",
+    href: "/mirror",
+    title: "Mirror",
     description:
-      "Explore the hidden metaphysical architecture: The Feed, The Frame, the Demiurgic System, the Unwritten Lattice, chaos, and possession.",
+      "Explore the hidden architecture of Reverse Mirror: the Demiurgic System, Egregores, The Frame, the Unwritten Lattice, the Great Inversion, the Last Kindness, and the Feed.",
   },
   {
     href: "/systems",

@@ -17,14 +17,14 @@ const slides: HeroSlide[] = [
     src: "/images/hero/demiurgic-system.png",
     title: "The Demiurgic System",
     caption: "The self-perpetuating machinery of unconsciousness.",
-    link: "/mythology",
+    link: "/mirror",
   },
   {
     src: "/images/hero/media-projection.png",
     title: "Media Projection",
     caption:
       "The story is no longer what happened. The story is what can be packaged around it.",
-    link: "/mythology",
+    link: "/mirror",
   },
   {
     src: "/images/hero/ai-loss-of-self.png",
